@@ -1,0 +1,24 @@
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rushing Yards</th>
+        <th>Touchdowns Thrown</th>
+        <!-- Add other player attributes as table headers -->
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td>{{ player.name }}</td>
+        <td>{{ player.rushingYards }}</td>
+        <td>{{ player.touchdownsThrown }}</td>
+        <!-- Add other player attributes as table cells -->
+        <td>
+          <button (click)="editPlayer(player)">Edit</button>
+          <button (click)="deletePlayer(player)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,36 @@
+<form (ngSubmit)="submitPlayer()">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="player.name" required>
+  </div>
+  <div>
+    <label for="rushingYards">Rushing Yards:</label>
+    <input type="number" id="rushingYards" [(ngModel)]="player.rushingYards" required>
+  </div>
+  <div>
+    <label for="touchdownsThrown">Touchdowns Thrown:</label>
+    <input type="number" id="touchdownsThrown" [(ngModel)]="player.touchdownsThrown" required>
+  </div>
+  <div>
+    <label for="sacks">Sacks:</label>
+    <input type="number" id="sacks" [(ngModel)]="player.sacks" required>
+  </div>
+  <div>
+    <label for="fieldGoalsMade">Field Goals Made:</label>
+    <input type="number" id="fieldGoalsMade" [(ngModel)]="player.fieldGoalsMade" required>
+  </div>
+  <div>
+    <label for="fieldGoalsMissed">Field Goals Missed:</label>
+    <input type="number" id="fieldGoalsMissed" [(ngModel)]="player.fieldGoalsMissed" required>
+  </div>
+  <div>
+    <label for="catchesMade">Catches Made:</label>
+    <input type="number" id="catchesMade" [(ngModel)]="player.catchesMade" required>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!player.name || !player.rushingYards || !player.touchdownsThrown"> 
+      {{ isEdit ? 'Update' : 'Add' }} Player
+    </button>
+    <button type="button" (click)="cancelEdit()" [hidden]="!isEdit">Cancel</button>
+  </div>
+</form>
